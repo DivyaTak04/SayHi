@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Real-Time Chat App</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Emoji Picker Web Component -->
+  <script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js"></script>
+</head>
+<body>
+  <div id="container">
+    <div id="header-bar">
+      <span class="header-title">
+        <span style="font-size:1em;">💬</span>
+        <span style="font-size:1.3em;font-weight:bold;"> SayHi</span>
+      </span>
+      <button id="dark-mode-toggle" title="Toggle dark mode">🌙</button>
+    </div>
+
+    <!-- Auth -->
+    <div id="auth-container">
+  <div class="card">
+    <div class="card2">
+      <form id="login-form" class="form" autocomplete="off">
+        <p id="heading">Login</p>
+        <div class="field">
+          <svg class="input-icon" ...> <!-- Keep SVGs as given -->
+            <path d="..." />
+          </svg>
+          <input
+            type="text"
+            id="login-username"
+            class="input-field"
+            placeholder="Username"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="field">
+          <svg class="input-icon" ...>
+            <path d="..." />
+          </svg>
+          <input
+            type="password"
+            id="login-password"
+            class="input-field"
+            placeholder="Password"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <div class="btn">
+          <button type="submit" class="button1">Login</button>
+          <button type="button" class="button2" id="show-register">Sign Up</button>
+        </div>
+        <button type="button" class="button3">Forgot Password</button>
+        <div id="login-msg" style="text-align:center; color:red;"></div>
+      </form>
+
+      <form id="register-form" class="form" style="display:none;" autocomplete="off">
+        <p id="heading">Register</p>
+        <div class="field">
+          <svg class="input-icon" ...>
+            <path d="..." />
+          </svg>
+          <input
+            type="text"
+            id="reg-username"
+            class="input-field"
+            placeholder="Username"
+            required
+            autocomplete="off"
+          />
+        </div>
+        <div class="field">
+          <svg class="input-icon" ...>
+            <path d="..." />
+          </svg>
+          <input
+            type="password"
+            id="reg-password"
+            class="input-field"
+            placeholder="Password"
+            required
+            autocomplete="new-password"
+          />
+        </div>
+        <div class="btn">
+          <button type="submit" class="button1">Register</button>
+          <button type="button" class="button2" id="show-login">Back</button>
+        </div>
+        <div id="reg-msg" style="text-align:center; color:red;"></div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+    <!-- Chat Options -->
+    <div id="chat-options" style="display:none;">
+      <button id="private-btn">Private Chat</button>
+      <button id="group-btn">Group Chat</button>
+      <button id="logout-btn" style="float:right;">Logout</button>
+    </div>
+
+    <!-- Private Chat -->
+    <div id="private-chat" style="display:none; position: relative;">
+      <h4>Private Chat</h4>
+      <select id="user-list"></select>
+      <ul id="private-messages"></ul>
+      <form id="private-form">
+        <input id="private-input" autocomplete="off" placeholder="Type a message..." />
+        <button type="button" id="private-emoji-btn">😊</button>
+        <button>Send</button>
+      </form>
+      <emoji-picker id="private-emoji-picker" style="display:none;"></emoji-picker>
+      <button id="back-private">Back</button>
+    </div>
+
+    <!-- Group Chat -->
+    <div id="group-chat" style="display:none; position: relative;">
+      <h4>Group Chat</h4>
+      <ul id="group-messages"></ul>
+      <form id="group-form">
+        <input id="group-input" autocomplete="off" placeholder="Type a message..." />
+        <button type="button" id="group-emoji-btn">😊</button>
+        <button>Send</button>
+      </form>
+      <emoji-picker id="group-emoji-picker" style="display:none;"></emoji-picker>
+      <button id="back-group">Back</button>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
+
+  <footer style="text-align:center;color:#888;margin-top:40px;font-size:0.95em;">
+    © 2025 Divya Tak. All rights reserved.
+  </footer>
+</body>
+</html>
