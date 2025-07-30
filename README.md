@@ -1,17 +1,4 @@
-# CHAT APPLICATION - SAYHI
-"COMPANY": CODTECH IT SOLUTIONS
-
-"NAME": DIVYA TAK
-
-"INTERN ID": CT08DN804
-
-"DOMAIN": FULL STACK DEVELOPMENT
-
-"DURATION": 8 WEEK
-
-"MENTOR": NEELA SANTOSH
-
-# SayHi 💬
+# SayHi 💬 - CHAT APPLICATION
 
 **SayHi** is a real-time chat application built during my full-stack web development internship. It allows users to chat instantly, with features like emojis, message timestamps, typing indicators, and dark mode support.
 
